@@ -1,0 +1,15 @@
+D:\NewProjects\StudentDetailsAPI\Abstraction\bin\Debug\net7.0\Abstraction.deps.json
+D:\NewProjects\StudentDetailsAPI\Abstraction\bin\Debug\net7.0\Abstraction.dll
+D:\NewProjects\StudentDetailsAPI\Abstraction\bin\Debug\net7.0\Abstraction.pdb
+D:\NewProjects\StudentDetailsAPI\Abstraction\bin\Debug\net7.0\Common.dll
+D:\NewProjects\StudentDetailsAPI\Abstraction\bin\Debug\net7.0\Common.pdb
+D:\NewProjects\StudentDetailsAPI\Abstraction\obj\Debug\net7.0\Abstraction.csproj.AssemblyReference.cache
+D:\NewProjects\StudentDetailsAPI\Abstraction\obj\Debug\net7.0\Abstraction.GeneratedMSBuildEditorConfig.editorconfig
+D:\NewProjects\StudentDetailsAPI\Abstraction\obj\Debug\net7.0\Abstraction.AssemblyInfoInputs.cache
+D:\NewProjects\StudentDetailsAPI\Abstraction\obj\Debug\net7.0\Abstraction.AssemblyInfo.cs
+D:\NewProjects\StudentDetailsAPI\Abstraction\obj\Debug\net7.0\Abstraction.csproj.CoreCompileInputs.cache
+D:\NewProjects\StudentDetailsAPI\Abstraction\obj\Debug\net7.0\Abstraction.csproj.CopyComplete
+D:\NewProjects\StudentDetailsAPI\Abstraction\obj\Debug\net7.0\Abstraction.dll
+D:\NewProjects\StudentDetailsAPI\Abstraction\obj\Debug\net7.0\refint\Abstraction.dll
+D:\NewProjects\StudentDetailsAPI\Abstraction\obj\Debug\net7.0\Abstraction.pdb
+D:\NewProjects\StudentDetailsAPI\Abstraction\obj\Debug\net7.0\ref\Abstraction.dll

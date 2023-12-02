@@ -1,0 +1,14 @@
+D:\NewProjects\StudentDetailsAPI\DataAccess\bin\Debug\net7.0\DataAccess.deps.json
+D:\NewProjects\StudentDetailsAPI\DataAccess\bin\Debug\net7.0\DataAccess.runtimeconfig.json
+D:\NewProjects\StudentDetailsAPI\DataAccess\bin\Debug\net7.0\DataAccess.dll
+D:\NewProjects\StudentDetailsAPI\DataAccess\bin\Debug\net7.0\DataAccess.pdb
+D:\NewProjects\StudentDetailsAPI\DataAccess\obj\Debug\net7.0\DataAccess.csproj.AssemblyReference.cache
+D:\NewProjects\StudentDetailsAPI\DataAccess\obj\Debug\net7.0\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+D:\NewProjects\StudentDetailsAPI\DataAccess\obj\Debug\net7.0\DataAccess.AssemblyInfoInputs.cache
+D:\NewProjects\StudentDetailsAPI\DataAccess\obj\Debug\net7.0\DataAccess.AssemblyInfo.cs
+D:\NewProjects\StudentDetailsAPI\DataAccess\obj\Debug\net7.0\DataAccess.csproj.CoreCompileInputs.cache
+D:\NewProjects\StudentDetailsAPI\DataAccess\obj\Debug\net7.0\DataAccess.dll
+D:\NewProjects\StudentDetailsAPI\DataAccess\obj\Debug\net7.0\refint\DataAccess.dll
+D:\NewProjects\StudentDetailsAPI\DataAccess\obj\Debug\net7.0\DataAccess.pdb
+D:\NewProjects\StudentDetailsAPI\DataAccess\obj\Debug\net7.0\DataAccess.genruntimeconfig.cache
+D:\NewProjects\StudentDetailsAPI\DataAccess\obj\Debug\net7.0\ref\DataAccess.dll
