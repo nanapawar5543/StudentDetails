@@ -7,6 +7,7 @@ using Common.Models;
 using DataAccess.Model;
 using Abstraction.Interfaces.Services;
 using System.Web.WebPages.Html;
+using System.Web.Mvc;
 
 namespace Services
 {
@@ -90,6 +91,28 @@ namespace Services
             }
             
             return studentdetails;
+        }
+
+        public async Task<List<SubjectMaster>> GetSubjectMasterDetails(int ClassID)
+        {
+            var subjects = (from objsubjmapping in _dbstudentDetailsContext.TblSubjectClassMappings
+                            join objsubject in _dbstudentDetailsContext.TblSubjectMasters
+                            on objsubjmapping.SubjectMasterIdFk equals objsubject.SubjectMasterIdPk
+                            join objclass in _dbstudentDetailsContext.TblClassMasters
+                            on objsubjmapping.ClassMasterIdFk equals objclass.ClassMasterIdPk
+                            where objclass.ClassMasterIdPk== ClassID
+                            select new SubjectMaster()
+                            {
+                                SubjectID=objsubjmapping.SubjectClassMappingIdPk,
+                                SubjectName=objsubject.SubjectName
+                            }).ToList();
+            return subjects;
+        }
+        public async Task<int> GetSubjectTotalMarks(int SubjectID)
+        {
+            int totalMarks=_dbstudentDetailsContext.TblSubjectClassMappings.Where(x=>x.SubjectClassMappingIdPk==SubjectID)
+                .Select(y=>y.SubjectMarks).FirstOrDefault();
+            return totalMarks;
         }
     }
 }

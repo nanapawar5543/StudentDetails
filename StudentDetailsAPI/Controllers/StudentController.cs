@@ -37,5 +37,19 @@ namespace StudentDetailsAPI.Controllers
             studentDetailsList =await _studentServices.LoadClassExamDetails();
             return Ok(studentDetailsList);
         }
+        [HttpGet]
+        public async Task<IActionResult> GetSubjectDetails(int ClassID)
+        {
+            List<SubjectMaster> subjects=new List<SubjectMaster>();
+            int intClassID=Convert.ToInt32(ClassID);
+            subjects = await _studentServices.GetSubjectMasterDetails(ClassID);
+            return Ok(subjects);
+        }
+        [HttpGet]
+        public async Task<IActionResult> GetSubjectTotalMarks(int SubjectID)
+        {
+            int totalMarks = await _studentServices.GetSubjectTotalMarks(SubjectID);
+            return Ok(totalMarks);
+        }
     }
 }

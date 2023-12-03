@@ -9,6 +9,7 @@ namespace Common.Models
 {
     public class StudentDetails
     {
+        public string? PRN { get; set; }
         public string? studentName { get; set; }
         public string? studentAddress { get; set; }
         public string? ParentContact1 { get; set; }
