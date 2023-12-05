@@ -15,7 +15,7 @@ public partial class TblStudentDetail
 
     public decimal? SemPct { get; set; }
 
-    public int Rollno { get; set; }
+    public int? Rollno { get; set; }
 
     public int? CreatedBy { get; set; }
 

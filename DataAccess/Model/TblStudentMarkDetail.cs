@@ -11,7 +11,7 @@ public partial class TblStudentMarkDetail
 
     public int? SubjectClassMappingIdFk { get; set; }
 
-    public int ObtainedMarks { get; set; }
+    public int? ObtainedMarks { get; set; }
 
     public int? CreatedBy { get; set; }
 

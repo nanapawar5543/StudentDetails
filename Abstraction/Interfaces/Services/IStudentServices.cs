@@ -13,7 +13,8 @@ namespace Abstraction.Interfaces.Services
         Task<List<PRNModel>> GetPRNDetails(string prnno);
         Task<StudentDetails> GetStudentDetails(string prnno);
         Task<StudentDetails> LoadClassExamDetails();
-        Task<List<SubjectMaster>> GetSubjectMasterDetails(int ClassID);
+        Task<StudentSubjectMarkDetails> GetStudentSubjectMarkDetails(int ClassID, int ExamTypeID, string PRN);
         Task<int> GetSubjectTotalMarks(int SubjectID);
+        Task<int> SaveStudentDetails(StudentDetails studentdetails);
     }
 }

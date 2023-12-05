@@ -11,7 +11,7 @@ public partial class TblSubjectClassMapping
 
     public int? ClassMasterIdFk { get; set; }
 
-    public int SubjectMarks { get; set; }
+    public int? SubjectMarks { get; set; }
 
     public int? CreatedBy { get; set; }
 
