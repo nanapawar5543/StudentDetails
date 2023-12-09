@@ -23,6 +23,9 @@ namespace Common.Models
 
         public List<SelectListItem>? ListofClassNames { get; set; }
         public List<SelectListItem>? ListofExamTypes { get; set; }
+        public List<string>? ListuniqueContact1 { get; set; }
+        public List<string>? ListuniqueContact2 { get; set; }
+        public List<string>? ListofUniqueEmailID { get; set; }
 
         public List<StudentMarks>? ListofStudentMarks { get; set; }
     }

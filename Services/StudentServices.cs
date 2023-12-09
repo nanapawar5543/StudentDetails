@@ -44,13 +44,17 @@ namespace Services
                                       studentAddress = obj.StudentAddress,
                                       ParentContact1 = obj.ParentContact1,
                                       ParentContact2 = obj.ParentContact2,
-                                      studentEmailID = obj.StudentEmailId,
-                                      Rollno = objstudentdetails.Rollno,
-                                      ClassMasterID = objclassmaster.ClassMasterIdPk,
-                                      ClassName = objclassmaster.ClassName,
-                                      ExamMasterID = objexamtype.ExamMasterIdPk,
-                                      ExamName = objexamtype.ExamName
+                                      studentEmailID = obj.StudentEmailId
                                   }).FirstOrDefault();
+                studentdetails.ListuniqueContact1 = _dbstudentDetailsContext.TblStudentMasters
+                   .Where(x => x.ParentContact1.Length > 0 && x.Prn != prnno)
+                    .Select(x => x.ParentContact1).ToList();
+                studentdetails.ListuniqueContact2 = _dbstudentDetailsContext.TblStudentMasters
+                    .Where(x => x.ParentContact2.Length > 0 && x.Prn != prnno)
+                    .Select(x => x.ParentContact2).ToList();
+                studentdetails.ListofUniqueEmailID = _dbstudentDetailsContext.TblStudentMasters
+                    .Where(x => x.StudentEmailId.Length > 0 && x.Prn != prnno)
+                    .Select(x => x.StudentEmailId).ToList();
             }
             catch (Exception ex)
             {
@@ -76,6 +80,13 @@ namespace Services
                     Text = obj.ClassName,
                     Value = obj.ClassMasterIdPk.ToString()
                 }).ToList();
+                studentdetails.ListuniqueContact1 = _dbstudentDetailsContext.TblStudentMasters
+                    .Where(x=>x.ParentContact1 != "")
+                    .Select(x => x.ParentContact1).ToList();
+                studentdetails.ListuniqueContact2 = _dbstudentDetailsContext.TblStudentMasters.Where(x => x.ParentContact2.Length>0)
+                    .Select(x => x.ParentContact2).ToList();
+                studentdetails.ListofUniqueEmailID = _dbstudentDetailsContext.TblStudentMasters.Where(x => x.StudentEmailId.Length>0)
+                    .Select(x => x.StudentEmailId).ToList();
             }
             else
             {
@@ -92,7 +103,7 @@ namespace Services
             studentSubjectMarkDetails.Rollno = ( from objstudentdetails in _dbstudentDetailsContext.TblStudentDetails
                                                  join objstudentMaster in _dbstudentDetailsContext.TblStudentMasters
                                                  on objstudentdetails.StudentMasterIdFk equals objstudentMaster.StudentMasterIdPk
-                                                 where objstudentdetails.ClassMasterIdFk==ClassID && objstudentdetails.ExamMasterIdFk==ExamTypeID
+                                                 where objstudentdetails.ClassMasterIdFk==ClassID
                                                  && objstudentMaster.Prn==PRN
                                                  select objstudentdetails.Rollno).FirstOrDefault();
                 
@@ -120,6 +131,7 @@ namespace Services
                                                           on objstudentdetails.StudentMasterIdFk equals objstudentmaster.StudentMasterIdPk
                                                           where objstudentmaster.Prn == PRN && objstudentdetails.ClassMasterIdFk == ClassID
                                                           && objstudentdetails.ExamMasterIdFk == ExamTypeID
+                                                          orderby objstudentsubmapping.SubjectClassMappingIdPk
                                                           select new StudentMarks()
                                                           {
                                                               subjectID = objstudentsubmapping.SubjectClassMappingIdPk,
@@ -127,6 +139,13 @@ namespace Services
                                                               TotalMarks = objstudentsubmapping.SubjectMarks,
                                                               ObtainedMarks = objstudentmarks.ObtainedMarks
                                                           }).ToList();
+
+            studentSubjectMarkDetails.ListofUniqueRollno=(from objstudentdetails in _dbstudentDetailsContext.TblStudentDetails
+                                                          join objstudentmaster in _dbstudentDetailsContext.TblStudentMasters
+                                                          on objstudentdetails.StudentMasterIdFk equals objstudentmaster.StudentMasterIdPk
+                                                          where objstudentmaster.Prn != PRN && objstudentdetails.ClassMasterIdFk== ClassID 
+                                                           && objstudentdetails.Rollno.ToString().Length > 0
+                                                          select objstudentdetails.Rollno.ToString()).ToList();
 
             return studentSubjectMarkDetails;
         }
@@ -190,7 +209,7 @@ namespace Services
                         && a.ExamMasterIdFk == studentdetails.ExamMasterID)
                         .Select(b => b.StudentDetailsIdPk).FirstOrDefault();
 
-                    if (studentdetails.ListofStudentMarks.Count > 1  && studentDetailsPK > 0)
+                    if (studentdetails.ListofStudentMarks.Count > 0  && studentDetailsPK > 0)
                     {
                         foreach (var item in studentdetails.ListofStudentMarks)
                         {
